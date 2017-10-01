@@ -64,3 +64,5 @@ gem 'font-awesome-rails'
 gem 'devise'
 
 gem 'rubocop', require: false
+
+gem 'simple_form'
