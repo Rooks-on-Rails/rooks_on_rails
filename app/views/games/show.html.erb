@@ -1,9 +1,94 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Game:</strong>
   <%= @game.name %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<div class="chessboard">
+  <div id="row_7">
+    <div class="white">Black<br />Rook</div>
+    <div class="black">Black<br />Knight</div>
+    <div class="white">Black<br />Bishop</div>
+    <div class="black">Black<br />Queen</div>
+    <div class="white">Black<br />King</div>
+    <div class="black">Black<br />Bishop</div>
+    <div class="white">Black<br />Knight</div>
+    <div class="black">Black<br />Rook</div>
+  </div>
+  <div id="row_6">
+    <div class="black">Black<br />Pawn</div>
+    <div class="white">Black<br />Pawn</div>
+    <div class="black">Black<br />Pawn</div>
+    <div class="white">Black<br />Pawn</div>
+    <div class="black">Black<br />Pawn</div>
+    <div class="white">Black<br />Pawn</div>
+    <div class="black">Black<br />Pawn</div>
+    <div class="white">Black<br />Pawn</div>
+  </div>
+  <div id="row_5">
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+  </div>
+  <div id="row_4">
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+  </div>
+  <div id="row_3">
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+  </div>
+  <div id="row_2">
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+    <div class="black"></div>
+    <div class="white"></div>
+  </div>
+  <div id="row_1">
+    <div class="white">White<br />Pawn</div>
+    <div class="black">White<br />Pawn</div>
+    <div class="white">White<br />Pawn</div>
+    <div class="black">White<br />Pawn</div>
+    <div class="white">White<br />Pawn</div>
+    <div class="black">White<br />Pawn</div>
+    <div class="white">White<br />Pawn</div>
+    <div class="black">White<br />Pawn</div>
+  </div>
+  <div id="row_0">
+    <div class="black">White<br />Rook</div>
+    <div class="white">White<br />Knight</div>
+    <div class="black">White<br />Bishop</div>
+    <div class="white">White<br />Queen</div>
+    <div class="black">White<br />King</div>
+    <div class="white">White<br />Bishop</div>
+    <div class="black">White<br />Knight</div>
+    <div class="white">White<br />Rook</div>
+  </div>
+</div>
+
+<p>
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+  <%= link_to 'Back', games_path %>
+</p>
