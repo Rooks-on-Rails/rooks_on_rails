@@ -66,3 +66,5 @@ gem 'devise'
 gem 'rubocop', require: false
 
 gem 'simple_form'
+
+gem "factory_girl_rails", "~> 4.0"
