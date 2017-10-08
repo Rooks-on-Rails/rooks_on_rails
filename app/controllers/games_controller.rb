@@ -22,7 +22,8 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(game_params)
+    @game = Game.create(game_params)
+    @game.populate_board!
 
     respond_to do |format|
       if @game.save
@@ -32,6 +33,7 @@ class GamesController < ApplicationController
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
+      redirect_to game_path(@game)
     end
   end
 
