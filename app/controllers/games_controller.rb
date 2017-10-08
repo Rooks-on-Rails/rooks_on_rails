@@ -33,8 +33,8 @@ class GamesController < ApplicationController
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
-      redirect_to game_path(@game)
     end
+    redirect_to game_path(@game)
   end
 
   # PATCH/PUT /games/1
