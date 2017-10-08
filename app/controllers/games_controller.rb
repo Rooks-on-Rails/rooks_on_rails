@@ -27,14 +27,14 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to game_path(@game), notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
     end
-    redirect_to game_path(@game)
+    # redirect_to game_path(@game)
   end
 
   # PATCH/PUT /games/1
