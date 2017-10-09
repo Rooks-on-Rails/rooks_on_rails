@@ -39,6 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.6'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do
@@ -66,5 +67,3 @@ gem 'devise'
 gem 'rubocop', require: false
 
 gem 'simple_form'
-
-gem "factory_girl_rails", "~> 4.0"
