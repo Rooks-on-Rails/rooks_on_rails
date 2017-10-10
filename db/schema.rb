@@ -16,9 +16,14 @@ ActiveRecord::Schema.define(version: 20171004033158) do
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
+    t.integer  "white_player_id"
+    t.integer  "black_player_id"
+    t.integer  "winning_player_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["black_player_id"], name: "index_games_on_black_player_id", using: :btree
+    t.index ["white_player_id"], name: "index_games_on_white_player_id", using: :btree
   end
 
   create_table "pieces", force: :cascade do |t|
