@@ -4,9 +4,9 @@ module GamesHelper
   #   "This is a test"    
   # end
   def render_piece(x, y)
-    piece = @game.pieces.find_by(position_x, position_y)
-    return nil unless piece
+    piece = @game.pieces.find_by(position_x: x, position_y: y)
+    # return nil unless piece
 
-    image_tag("black_rook.svg")
+    image_tag("black_rook.svg", size: "48x48", alt: "Black Rook")
   end
 end
