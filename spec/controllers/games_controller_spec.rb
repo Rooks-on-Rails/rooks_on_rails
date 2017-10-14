@@ -136,4 +136,23 @@ RSpec.describe GamesController, type: :controller do
       expect(response).to redirect_to(games_url)
     end
   end
+
+  describe "populate board" do
+    it 'Adds correct number of black Pawns to the board' do
+     game = Game.create!
+     game.populate_board!
+
+expect(game.pieces.where(type: 'Pawn').count).to eq 8
+  end
+end
+
+  describe "populate board" do
+    it 'Adds correct number of white Pawns to the board' do
+      game = Game.create!
+      game.populate_board!
+
+  expect(game.pieces.where(type: 'Pawn').count).to eq 8
+ end
+end
+
 end
