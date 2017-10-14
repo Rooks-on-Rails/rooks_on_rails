@@ -21,31 +21,59 @@ RSpec.describe Piece, type: :model do
 
 
   describe '#obstructed?' do
-    let(:piece) { FactoryGirl.create(:bishop) }
-    #let(:piece) { Bishop.create(position_x: 0, position_y: 0) }
+    let(:user) { FactoryGirl.create(:user) }
+    let(:game) { FactoryGirl.create(:game) }
+let(:piece) { Rook.create(game: game, user: user, position_x: 0, position_y: 0) }
+    context 'invalid move' do
+      it 'should raise an error' do
+        expect { piece.obstructed?(3,5) }.to raise_error('invalid move')
+      end
+    end
 
-    context 'when horizontal move' do
-      context 'when piece is obstructed' do
-        before { FactoryGirl.create(:bishop, position_x: 4, position_y: 0) }
+    context 'valid move' do
+      context 'horizontal move' do
+        context 'when piece is not obstructed' do
+          it 'should return false' do
+            result = piece.obstructed?(7,0)
+            expect(result).to be(false)
+          end
+        end
+        context 'when piece is obstructed' do
+          before do
+            Bishop.create(game: game, user: user, position_x: 2, position_y: 0)
+          end
 
+          it 'should return true' do
+            result = piece.obstructed?(5,0)
+            expect(result).to be(true)
+          end
 
-        it 'should return true' do
-          result = piece.obstructed?(7, 0)
+        end
+      end
+      context 'vertical move' do
+        context 'when piece is not obstructed' do
+          it 'should return false' do
+            result = piece.obstructed?(0,7)
+            expect(result).to be(false)
+          end
+        end
+        context 'when piece is obstructed' do
+          before do
+            Bishop.create(game: game, user: user, position_x: 0, position_y: 4)
+          end
 
-            # create piece for testing
-            # call the obstructed?
-            # get the result
+          it 'should return true' do
+            result = piece.obstructed?(0,5)
+            expect(result).to be(true)
+          end
 
-          expect(result).to be(true)
         end
       end
 
-      context 'when piece is not obstructed' do
-        it 'should return false' do
-          result = piece.obstructed?
-          expect(result).to be(false)
-        end
-      end
+
+
+
+
     end
   end
 end
