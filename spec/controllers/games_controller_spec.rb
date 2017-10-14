@@ -137,7 +137,7 @@ RSpec.describe GamesController, type: :controller do
     end
   end
 
-  #Adds white peices to board
+  #Adds white pieces to board
 
   describe "populate board" do
     it 'Adds correct number of white Pawns to the board' do
@@ -227,7 +227,7 @@ expect(game.pieces.where(type: 'Queen', color: 'White')).to eq (game.pieces.wher
 end
 end
 
- #Adds black peices to board
+ #Adds black pieces to board
 
  describe "populate board" do
   it 'Adds correct number of black Pawns to the board' do
