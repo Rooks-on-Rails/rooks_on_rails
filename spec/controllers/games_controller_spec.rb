@@ -137,22 +137,170 @@ RSpec.describe GamesController, type: :controller do
     end
   end
 
-  describe "populate board" do
-    it 'Adds correct number of black Pawns to the board' do
-     game = Game.create!
-     game.populate_board!
-
-expect(game.pieces.where(type: 'Pawn').count).to eq 8
-  end
-end
+  #Adds white peices to board
 
   describe "populate board" do
     it 'Adds correct number of white Pawns to the board' do
-      game = Game.create!
-      game.populate_board!
+     game = Game.create!
+     game.populate_board!
 
-  expect(game.pieces.where(type: 'Pawn').count).to eq 8
- end
+expect(game.pieces.where(type: 'Pawn', color: 'White').count).to eq 8
+  end
+end
+
+describe "populate board" do
+  it 'Adds white Rook to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Rook', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white Rook to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Rook', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white Knight to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Knight', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white Knight to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Knight', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white Bishop to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Bishop', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white Bishop to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Bishop', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white King to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'King', color: 'White').count).to eq 1
+end
+end
+
+describe "populate board" do
+  it 'Adds white Queen to the board' do
+    game = Game.create!
+    game.populate_board!
+
+expect(game.pieces.where(type: 'Queen', color: 'White').count).to eq 1
+end
+end
+
+ #Adds black peices to board
+
+ describe "populate board" do
+  it 'Adds correct number of black Pawns to the board' do
+   game = Game.create!
+   game.populate_board!
+
+expect(game.pieces.where(type: 'Pawn', color: 'Black').count).to eq 8
+end
+end
+
+describe "populate board" do
+it 'Adds black Rook to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Rook', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black Rook to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Rook', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black Knight to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Knight', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black Knight to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Knight', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black Bishop to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Bishop', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black Bishop to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Bishop', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black King to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'King', color: 'Black').count).to eq 1
+end
+end
+
+describe "populate board" do
+it 'Adds black Queen to the board' do
+  game = Game.create!
+  game.populate_board!
+
+expect(game.pieces.where(type: 'Queen', color: 'Black').count).to eq 1
+end
 end
 
 end
