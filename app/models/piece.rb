@@ -3,6 +3,7 @@ class Piece < ApplicationRecord
   belongs_to :user
 
   def obstructed?(type, position_x, position_y)
+  
     # see if the destination is a valid ie
     # diagonal, vertical or horizontal
     # return boolean (true if move valid, else false)

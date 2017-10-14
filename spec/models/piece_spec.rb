@@ -18,12 +18,15 @@ RSpec.describe Piece, type: :model do
   #   end
   # end
 
+
+
   describe '#obstructed?' do
-    let(:piece) { Piece.create(type: '', position_x: 0, position_y: 0) }
+    let(:piece) { FactoryGirl.create(:bishop) }
+    #let(:piece) { Bishop.create(position_x: 0, position_y: 0) }
 
     context 'when horizontal move' do
       context 'when piece is obstructed' do
-        before { Piece.create(position_x: 4, position_y: 0) }
+        before { FactoryGirl.create(:bishop, position_x: 4, position_y: 0) }
 
 
         it 'should return true' do

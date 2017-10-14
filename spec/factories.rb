@@ -6,4 +6,10 @@ FactoryGirl.define do
     password 'secretPassword'
     password_confirmation 'secretPassword'
   end
+
+  factory :bishop do
+    type 'bishop'
+    position_x 0
+    position_y 0
+  end
 end
