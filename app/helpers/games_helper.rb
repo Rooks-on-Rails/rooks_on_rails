@@ -1,8 +1,5 @@
 module GamesHelper
-
-  # def test
-  #   "This is a test"    
-  # end
+  
   def render_piece(x, y)
     piece = @game.pieces.find_by(position_x: x, position_y: y)
     # return nil unless piece
