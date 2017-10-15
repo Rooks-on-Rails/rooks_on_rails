@@ -51,6 +51,7 @@ GEM
       sass (>= 3.4.19)
     builder (3.2.3)
     byebug (9.1.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -112,6 +113,13 @@ GEM
     pg (0.21.0)
     popper_js (1.11.1)
     powerpack (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     puma (3.10.0)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -188,6 +196,7 @@ GEM
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
+    slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -227,7 +236,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0.beta)
-  byebug
   coffee-rails (~> 4.2)
   devise
   factory_girl_rails (~> 4.0)
@@ -236,6 +244,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.18)
+  pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.6)
   rails-assets-tether (>= 1.3.3)!
