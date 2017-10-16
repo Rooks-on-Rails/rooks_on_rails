@@ -3,6 +3,10 @@ module GamesHelper
     @game.pieces.find_by(position_x: x, position_y: y)
     # return nil unless piece
 
-    image_tag('black_rook.svg', size: '48x48', alt: 'Black Rook')
+    # I want to pull the icon of the piece in here by calling the icon method in each piece's model
+    # I've tried:
+    # piece.icon
+    # Piece.type.icon
+    # piece.type.icon
   end
 end
