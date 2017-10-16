@@ -3,6 +3,6 @@ class Piece < ApplicationRecord
   belongs_to :user
 
   def icon_path
-    '#{color}_#{type}.svg'.downcase
+    "#{color}_#{type}.svg".downcase
   end
 end
