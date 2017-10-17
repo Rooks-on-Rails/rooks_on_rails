@@ -50,5 +50,26 @@ RSpec.describe King, type: :model do
       king.position_y = 3
       expect(king.valid_move?(5, 3)).to eq(false)
     end
+
+    it 'returns false if the move is off the board' do
+      king = King.new
+      king.position_x = 0
+      king.position_y = 0
+      expect(king.valid_move?(-1, -1)).to eq(false)
+    end
+
+    it 'returns false if the move is off the board (below zero)' do
+      king = King.new
+      king.position_x = 0
+      king.position_y = 0
+      expect(king.valid_move?(-1, -1)).to eq(false)
+    end
+
+    it 'returns false if the move is off the board (over seven)' do
+      king = King.new
+      king.position_x = 7
+      king.position_y = 7
+      expect(king.valid_move?(8, 8)).to eq(false)
+    end
   end
 end
