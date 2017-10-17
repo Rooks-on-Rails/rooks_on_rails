@@ -1,6 +1,6 @@
 class King < Piece
   def valid_move?(destination_x, destination_y)
-    if destination_x.between?(0, 7) and destination_y.between?(0,7)
+    if destination_x.between?(0, 7) && destination_y.between?(0, 7)
       difference_x = destination_x - position_x
       difference_y = destination_y - position_y
 
