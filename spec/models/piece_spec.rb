@@ -21,7 +21,7 @@ RSpec.describe Piece, type: :model do
       expect(opposing_piece.position_x).to be_nil
     end
 
-    pending 'should update position to new location' do
+    it 'should update position to new location' do
       piece.move_to!(1, 1)
 
       expect(piece.position_x).to eq(1)
