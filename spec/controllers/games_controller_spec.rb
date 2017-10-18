@@ -144,14 +144,14 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 0))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 1))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 2))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 3))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 4))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 5))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 6))
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq (game.pieces.where(position_x: 6, position_y: 7))
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 0)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 1)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 2)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 3)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 4)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 5)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 6)
+      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 7)
     end
   end
 
@@ -160,7 +160,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 0))
+      expect(game.pieces.where(type: 'Rook', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 0)
     end
   end
 
@@ -169,7 +169,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'White')).to eq (game.pieces.where(position_x: 0, position_y: 7))
+      expect(game.pieces.where(type: 'Rook', color: 'White')).to eq game.pieces.where(position_x: 0, position_y: 7)
     end
   end
 
@@ -178,7 +178,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 1))
+      expect(game.pieces.where(type: 'Knight', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 1)
     end
   end
 
@@ -187,7 +187,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 6))
+      expect(game.pieces.where(type: 'Knight', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 6)
     end
   end
 
@@ -196,7 +196,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 2))
+      expect(game.pieces.where(type: 'Bishop', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 2)
     end
   end
 
@@ -205,7 +205,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 5))
+      expect(game.pieces.where(type: 'Bishop', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 5)
     end
   end
 
@@ -214,7 +214,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'King', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 4))
+      expect(game.pieces.where(type: 'King', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 4)
     end
   end
 
@@ -223,7 +223,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Queen', color: 'White')).to eq (game.pieces.where(position_x: 7, position_y: 3))
+      expect(game.pieces.where(type: 'Queen', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 3)
     end
   end
 
@@ -234,14 +234,14 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 0))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 1))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 2))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 3))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 4))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 5))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 6))
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq (game.pieces.where(position_x: 1, position_y: 7))
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 0)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 1)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 2)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 3)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 4)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 5)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 6)
+      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 7)
     end
   end
 
@@ -250,7 +250,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 0))
+      expect(game.pieces.where(type: 'Rook', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 0)
     end
   end
 
@@ -259,7 +259,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 7))
+      expect(game.pieces.where(type: 'Rook', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 7)
     end
   end
 
@@ -268,7 +268,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 1))
+      expect(game.pieces.where(type: 'Knight', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 1)
     end
   end
 
@@ -277,7 +277,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 6))
+      expect(game.pieces.where(type: 'Knight', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 6)
     end
   end
 
@@ -286,7 +286,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 2))
+      expect(game.pieces.where(type: 'Bishop', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 2)
     end
   end
 
@@ -295,7 +295,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 5))
+      expect(game.pieces.where(type: 'Bishop', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 5)
     end
   end
 
@@ -304,7 +304,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'King', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 4))
+      expect(game.pieces.where(type: 'King', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 4)
     end
   end
 
@@ -313,7 +313,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Queen', color: 'Black')).to eq (game.pieces.where(position_x: 0, position_y: 3))
+      expect(game.pieces.where(type: 'Queen', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 3)
     end
   end
 end
