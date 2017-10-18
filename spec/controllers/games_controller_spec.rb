@@ -229,7 +229,7 @@ RSpec.describe GamesController, type: :controller do
 
  # Adds black pieces to board
 
- describe 'populate board' do
+  describe 'populate board' do
     it 'Adds correct number of black Pawns to the board' do
       game = Game.create!
       game.populate_board!
