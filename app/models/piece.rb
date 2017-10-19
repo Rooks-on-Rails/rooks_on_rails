@@ -18,6 +18,4 @@ class Piece < ApplicationRecord
       return 'invalid move'
     end
   end
-
-
 end
