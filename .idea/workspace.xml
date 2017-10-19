@@ -4,7 +4,6 @@
     <list default="true" id="d8079e6d-ffbc-401a-8d25-3b35b56f5a65" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rooks-on-rails" afterPath="$PROJECT_DIR$/rooks-on-rails" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/piece_spec.rb" afterPath="$PROJECT_DIR$/spec/models/piece_spec.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -315,7 +314,7 @@
       <workItem from="1508100727703" duration="1068000" />
       <workItem from="1508169821621" duration="23000" />
       <workItem from="1508270432606" duration="701000" />
-      <workItem from="1508351190345" duration="4126000" />
+      <workItem from="1508351190345" duration="4621000" />
     </task>
     <task id="LOCAL-00001" summary="Added all piece class model">
       <created>1507331293587</created>
@@ -335,7 +334,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20385000" />
+    <option name="totallyTimeSpent" value="20880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
