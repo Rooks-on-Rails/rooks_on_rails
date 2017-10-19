@@ -19,5 +19,5 @@ class Piece < ApplicationRecord
     end
   end
 
-  private
+
 end
