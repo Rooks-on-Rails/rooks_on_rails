@@ -6,12 +6,8 @@ class Piece < ApplicationRecord
     "#{color}_#{type}.svg".downcase
   end
 
-  def create_piece
-    @piece = Piece.create(piece_params)
-  end
-
   def move_to!(x, y)
-    opposing_piece = Piece.find_by(position_x: x, position_y: y)
+    opposing_piece = game.pieces.find_by(position_x: x, position_y: y)
 
     if opposing_piece.present? && opposing_piece.color != color
       opposing_piece.update_attributes(position_x: nil, position_y: nil)
@@ -24,8 +20,4 @@ class Piece < ApplicationRecord
   end
 
   private
-
-  def piece_params
-    params.require(:piece).permit(:position_x, :position_y, :type, :color)
-  end
 end

@@ -11,12 +11,12 @@ RSpec.describe Piece, type: :model do
       expect(piece.position_y).to eq(1)
     end
 
-    pending 'should be able to capture opposing piece' do
+    it 'should be able to capture opposing piece' do
       user2 = User.create!(email: 'no@way.com', password: 'Nopenoteven')
       opposing_piece = Piece.create!(position_x: 0, position_y: 1, game: game, user: user2, color: 'black')
 
       piece.move_to!(0, 1)
-
+      opposing_piece.reload
       expect(piece.position_y).to eq(1)
       expect(opposing_piece.position_y).to be_nil
       expect(opposing_piece.position_x).to be_nil
