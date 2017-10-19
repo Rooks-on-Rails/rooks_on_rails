@@ -19,7 +19,6 @@ RSpec.describe Piece, type: :model do
       expect(piece.position_y).to eq(1)
       expect(opposing_piece.position_y).to be_nil
       expect(opposing_piece.position_x).to be_nil
-
     end
 
     it 'should update position to new location' do
