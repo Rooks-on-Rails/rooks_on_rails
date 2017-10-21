@@ -7,7 +7,7 @@
 
 <div class="chessboard">
   <div id="row_7">
-    <div class="white"><%= render_piece(0, 0) %></div>
+    <div class="white"><%= link_to render_piece(0, 0), game_piece_path %></div>
     <div class="black"><%= render_piece(0, 1) %></div>
     <div class="white"><%= render_piece(0, 2) %></div>
     <div class="black"><%= render_piece(0, 3) %></div>

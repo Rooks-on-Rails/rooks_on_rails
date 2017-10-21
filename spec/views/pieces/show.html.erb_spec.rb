@@ -1,11 +1,11 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "pieces/show", type: :view do
-  before(:each) do
-    @piece = assign(:piece, Piece.create!())
-  end
+# RSpec.describe "pieces/show", type: :view do
+#   before(:each) do
+#     @piece = assign(:piece, Piece.create!())
+#   end
 
-  it "renders attributes in <p>" do
-    render
-  end
-end
+#   it "renders attributes in <p>" do
+#     render
+#   end
+# end

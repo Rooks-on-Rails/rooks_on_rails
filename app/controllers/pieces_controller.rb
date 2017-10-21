@@ -4,11 +4,12 @@ class PiecesController < ApplicationController
   # GET /pieces/1
   # GET /pieces/1.json
   def show
+    set_piece.game.find_by_id(params[:id])
+    return render_not_found if set_piece.game.id.blank?
   end
 
   # GET /pieces/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /pieces
   # POST /pieces.json
