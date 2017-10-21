@@ -160,7 +160,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(Piece.find_by(position_x: 7, position_y: 0)).to eq 'Rook'
+      expect(game.pieces.find_by(position_x: 7, position_y: 0).type).to eq 'Rook'
     end
   end
 
