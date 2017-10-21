@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  
   # Adds white pieces to board
   describe 'populate board' do
     it 'Adds correct number of white Pawns to the board' do
