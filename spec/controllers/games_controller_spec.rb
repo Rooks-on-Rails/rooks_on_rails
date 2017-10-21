@@ -144,14 +144,14 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 0)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 1)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 2)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 3)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 4)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 5)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 6)
-      expect(game.pieces.where(type: 'Pawn', color: 'White')).to eq game.pieces.where(position_x: 6, position_y: 7)
+      expect(game.pieces.find_by(position_x: 6, position_y: 0).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 1).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 2).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 3).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 4).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 5).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 6).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 6, position_y: 7).type).to eq 'Pawn'
     end
   end
 
@@ -160,7 +160,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 0)
+      expect(Piece.find_by(position_x: 7, position_y: 0)).to eq 'Rook'
     end
   end
 
@@ -169,7 +169,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'White')).to eq game.pieces.where(position_x: 0, position_y: 7)
+      expect(game.pieces.find_by(position_x: 7, position_y: 7).type).to eq 'Rook'
     end
   end
 
@@ -178,7 +178,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 1)
+      expect(game.pieces.find_by(position_x: 7, position_y: 1).type).to eq 'Knight'
     end
   end
 
@@ -187,7 +187,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 6)
+      expect(game.pieces.find_by(position_x: 7, position_y: 6).type).to eq 'Knight'
     end
   end
 
@@ -196,7 +196,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 2)
+      expect(game.pieces.find_by(position_x: 7, position_y: 2).type).to eq 'Bishop'
     end
   end
 
@@ -205,7 +205,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 5)
+      expect(game.pieces.find_by(position_x: 7, position_y: 5).type).to eq 'Bishop'
     end
   end
 
@@ -214,7 +214,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'King', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 4)
+      expect(game.pieces.find_by(position_x: 7, position_y: 4).type).to eq 'King'
     end
   end
 
@@ -223,7 +223,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Queen', color: 'White')).to eq game.pieces.where(position_x: 7, position_y: 3)
+      expect(game.pieces.find_by(position_x: 7, position_y: 3).type).to eq 'Queen'
     end
   end
 
@@ -234,14 +234,14 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 0)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 1)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 2)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 3)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 4)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 5)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 6)
-      expect(game.pieces.where(type: 'Pawn', color: 'Black')).to eq game.pieces.where(position_x: 1, position_y: 7)
+      expect(game.pieces.find_by(position_x: 1, position_y: 0).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 1).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 2).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 3).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 4).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 5).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 6).type).to eq 'Pawn'
+      expect(game.pieces.find_by(position_x: 1, position_y: 7).type).to eq 'Pawn'
     end
   end
 
@@ -250,7 +250,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 0)
+      expect(game.pieces.find_by(position_x: 0, position_y: 0).type).to eq 'Rook'
     end
   end
 
@@ -259,7 +259,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Rook', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 7)
+      expect(game.pieces.find_by(position_x: 0, position_y: 7).type).to eq 'Rook'
     end
   end
 
@@ -268,7 +268,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 1)
+      expect(game.pieces.find_by(position_x: 0, position_y: 1).type).to eq 'Knight'
     end
   end
 
@@ -277,7 +277,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Knight', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 6)
+      expect(game.pieces.find_by(position_x: 0, position_y: 6).type).to eq 'Knight'
     end
   end
 
@@ -286,7 +286,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 2)
+      expect(game.pieces.find_by(position_x: 0, position_y: 2).type).to eq 'Bishop'
     end
   end
 
@@ -295,7 +295,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Bishop', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 5)
+      expect(game.pieces.find_by(position_x: 0, position_y: 5).type).to eq 'Bishop'
     end
   end
 
@@ -304,7 +304,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'King', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 4)
+      expect(game.pieces.find_by(position_x: 0, position_y: 4).type).to eq 'King'
     end
   end
 
@@ -313,7 +313,7 @@ RSpec.describe GamesController, type: :controller do
       game = Game.create!
       game.populate_board!
 
-      expect(game.pieces.where(type: 'Queen', color: 'Black')).to eq game.pieces.where(position_x: 0, position_y: 3)
+      expect(game.pieces.find_by(position_x: 0, position_y: 3).type).to eq 'Queen'
     end
   end
 end
