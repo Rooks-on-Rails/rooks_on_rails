@@ -6,30 +6,30 @@ class Game < ApplicationRecord
   has_many :pieces, dependent: false
 
   def populate_board!
-    Rook.create(position_x: 0, position_y: 0, game: self, color: 'black', user_id: 1)
-    Knight.create(position_x: 0, position_y: 1, game: self, color: 'black', user_id: 1)
-    Bishop.create(position_x: 0, position_y: 2, game: self, color: 'black', user_id: 1)
-    Queen.create(position_x: 0, position_y: 3, game: self, color: 'black', user_id: 1)
-    King.create(position_x: 0, position_y: 4, game: self, color: 'black', user_id: 1)
-    Bishop.create(position_x: 0, position_y: 5, game: self, color: 'black', user_id: 1)
-    Knight.create(position_x: 0, position_y: 6, game: self, color: 'black', user_id: 1)
-    Rook.create(position_x: 0, position_y: 7, game: self, color: 'black', user_id: 1)
+    Rook.create(position_x: 0, position_y: 0, game: self, color: 'black'
+    Knight.create(position_x: 0, position_y: 1, game: self, color: 'black'
+    Bishop.create(position_x: 0, position_y: 2, game: self, color: 'black'
+    Queen.create(position_x: 0, position_y: 3, game: self, color: 'black'
+    King.create(position_x: 0, position_y: 4, game: self, color: 'black'
+    Bishop.create(position_x: 0, position_y: 5, game: self, color: 'black'
+    Knight.create(position_x: 0, position_y: 6, game: self, color: 'black'
+    Rook.create(position_x: 0, position_y: 7, game: self, color: 'black'
 
-    Rook.create(position_x: 7, position_y: 0, game: self, color: 'white', user_id: 1)
-    Knight.create(position_x: 7, position_y: 1, game: self, color: 'white', user_id: 1)
-    Bishop.create(position_x: 7, position_y: 2, game: self, color: 'white', user_id: 1)
-    Queen.create(position_x: 7, position_y: 3, game: self, color: 'white', user_id: 1)
-    King.create(position_x: 7, position_y: 4, game: self, color: 'white', user_id: 1)
-    Bishop.create(position_x: 7, position_y: 5, game: self, color: 'white', user_id: 1)
-    Knight.create(position_x: 7, position_y: 6, game: self, color: 'white', user_id: 1)
-    Rook.create(position_x: 7, position_y: 7, game: self, color: 'white', user_id: 1)
+    Rook.create(position_x: 7, position_y: 0, game: self, color: 'white'
+    Knight.create(position_x: 7, position_y: 1, game: self, color: 'white'
+    Bishop.create(position_x: 7, position_y: 2, game: self, color: 'white'
+    Queen.create(position_x: 7, position_y: 3, game: self, color: 'white'
+    King.create(position_x: 7, position_y: 4, game: self, color: 'white'
+    Bishop.create(position_x: 7, position_y: 5, game: self, color: 'white'
+    Knight.create(position_x: 7, position_y: 6, game: self, color: 'white'
+    Rook.create(position_x: 7, position_y: 7, game: self, color: 'white'
 
     0.upto(7) do |b| # b to stand in for black for now
-      Pawn.create(position_x: 1, position_y: b, game: self, color: 'black', user_id: 1)
+      Pawn.create(position_x: 1, position_y: b, game: self, color: 'black'
     end
 
     0.upto(7) do |w| # w to stand in for white for now
-      Pawn.create(position_x: 6, position_y: w, game: self, color: 'white', user_id: 1)
+      Pawn.create(position_x: 6, position_y: w, game: self, color: 'white'
     end
   end
 end
