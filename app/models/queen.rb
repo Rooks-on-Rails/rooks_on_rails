@@ -4,6 +4,6 @@ class Queen < Piece
     difference_x = destination_x - position_x
     difference_y = destination_y - position_y
     return false if difference_x.zero? && difference_y.zero?
-    return true if difference_x.abs <= 7 && difference_y.abs <= 7
+    difference_x.abs <= 7 && difference_y.abs <= 7
   end
 end
