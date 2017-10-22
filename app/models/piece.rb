@@ -46,13 +46,7 @@ class Piece < ApplicationRecord
           #position_range_y = [(position_y - 1)..(destination_y + 1)]
           position_range_y = [(destination_y + 1)..(position_y - 1)]
       end
-
-    vertical_obstructing_pieces = Piece.where(game_id: game_id, position_x: position_x, position_y: position_range_y)
-      if vertical_obstructing_pieces.empty?
-        return false
-      else
-        return true
-      end
+       Piece.exists?(game_id: game_id, position_x: position_x, position_y: position_range_y)
   end
 
   def horizontal_obstruction(destination_x, destination_y)
@@ -63,13 +57,7 @@ class Piece < ApplicationRecord
       #horizontal right to left
         position_range_x = [(destination_x + 1)..(position_x - 1)]
       end
-        horizontal_obstructing_pieces = Piece.where(game_id: game_id, position_x: position_range_x, position_y: position_y)
-      if horizontal_obstructing_pieces.empty?
-        #ie true the array is empty thus no horizontal obstruction
-        return false
-      else
-      #ie false the array contains something thus there's horizontal obstruction
-        return true
+        Piece.exists?(game_id: game_id, position_x: position_range_x, position_y: position_y)
       end
   end
 
@@ -79,26 +67,14 @@ class Piece < ApplicationRecord
       (position_x + 1).upto(destination_x -1) do |x|
         delta_x = x
         delta_y = position_y + x
-          diagonal_obstructing_pieces = Piece.where(game_id: game_id, position_x: delta_x, position_y: delta_y)
-          if diagonal_obstructing_pieces.empty?
-            return false
-          else
-            return true
-          end
+          Piece.exists?(game_id: game_id, position_x: delta_x, position_y: delta_y)
       end
     elsif (position_x > destination_x)
       # (position_x - 1).upto(destination_x + 1) do |x|
       (destination_x + 1).upto(position_x - 1) do |x|
         delta_x = x
         delta_y = destination_y + x
-          diagonal_obstructing_pieces = Piece.where(game_id: game_id, position_x: delta_x, position_y: delta_y)
-          if diagonal_obstructing_pieces.empty?
-            #ie true the array is empty thus no diagonal obstruction
-            return false
-          else
-            #ie false the array contains something thus there's diagonal obstruction
-            return true
-          end
+          Piece.exists?(game_id: game_id, position_x: delta_x, position_y: delta_y)
       end
     end
   end
