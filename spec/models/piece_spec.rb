@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe Piece, type: :model do
   describe '#move_to!' do
     let(:game) { Game.create! }
-    let(:user) { User.create!(email: 'dude@abides.com', password: 'thatsyouropinionman') }
-    let(:piece) { Piece.create!(position_x: 0, position_y: 0, game: game, user: user, color: 'white') }
+    let(:piece) { Piece.create!(position_x: 0, position_y: 0, game: game, color: 'white') }
     it 'should be able to move there' do
       piece.move_to!(1, 1)
 
@@ -12,8 +11,7 @@ RSpec.describe Piece, type: :model do
     end
 
     it 'should be able to capture opposing piece' do
-      user2 = User.create!(email: 'no@way.com', password: 'Nopenoteven')
-      opposing_piece = Piece.create!(position_x: 0, position_y: 1, game: game, user: user2, color: 'black')
+      opposing_piece = Piece.create!(position_x: 0, position_y: 1, game: game, color: 'black')
 
       piece.move_to!(0, 1)
       opposing_piece.reload
@@ -30,7 +28,7 @@ RSpec.describe Piece, type: :model do
     end
 
     it "Shouldn't allow you to move to a place where another of your pieces is" do
-      same_color_piece = Piece.create!(position_x: 0, position_y: 1, game: game, user: user, color: 'white')
+      same_color_piece = Piece.create!(position_x: 0, position_y: 1, game: game, color: 'white')
       piece.move_to!(0, 1)
 
       expect(same_color_piece.position_y).to eq(1)
