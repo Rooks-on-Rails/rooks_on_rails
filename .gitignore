@@ -18,3 +18,6 @@
 
 # Ignore this Mac OS file.
 .DS_Store
+
+# Ignore .idea files
+.idea
