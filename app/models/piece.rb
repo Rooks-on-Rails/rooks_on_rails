@@ -2,11 +2,6 @@ class Piece < ApplicationRecord
   belongs_to :game
   belongs_to :user
 
-<<<<<<< HEAD
-  def icon_path
-    "#{color}_#{type}.svg".downcase
-  end
-=======
   def obstructed?(destination_x, destination_y)
     route = route_validation(position_x, position_y, destination_x, destination_y)
       if route == 'vertical'
@@ -58,7 +53,6 @@ class Piece < ApplicationRecord
         position_range_x = [(destination_x + 1)..(position_x - 1)]
       end
         Piece.exists?(game_id: game_id, position_x: position_range_x, position_y: position_y)
-      end
   end
 
   def diagonal_obstruction(destination_x, destination_y)
@@ -78,7 +72,4 @@ class Piece < ApplicationRecord
       end
     end
   end
-
-
->>>>>>> 899bee5947ea269e2a109216bc53cc65bdea3ce1
 end
