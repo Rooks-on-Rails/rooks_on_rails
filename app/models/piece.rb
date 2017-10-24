@@ -1,10 +1,5 @@
 class Piece < ApplicationRecord
   belongs_to :game
-  belongs_to :user
-
-  def icon_path
-    "#{color}_#{type}.svg".downcase
-  end
 
   def move_to!(x, y)
     opposing_piece = game.pieces.find_by(position_x: x, position_y: y)
