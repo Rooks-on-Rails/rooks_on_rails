@@ -4,8 +4,8 @@ class PiecesController < ApplicationController
   # GET /pieces/1
   # GET /pieces/1.json
   def show
-    set_piece.game.find_by_id(params[:id])
-    return render_not_found if set_piece.game.id.blank?
+    @current_piece = Piece.find(params[:id])
+    @game = @current_piece.game
   end
 
   # GET /pieces/1/edit
