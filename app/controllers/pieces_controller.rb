@@ -1,5 +1,5 @@
 class PiecesController < ApplicationController
-  before_action :set_piece, only: [:show, :edit, :update, :destroy]
+  before_action :set_piece, only: %i[show edit update destroy]
 
   # GET /pieces/1
   # GET /pieces/1.json
@@ -52,13 +52,14 @@ class PiecesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_piece
-      @piece = Piece.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def piece_params
-      params.fetch(:piece, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_piece
+    @piece = Piece.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def piece_params
+    params.fetch(:piece, {})
+  end
 end

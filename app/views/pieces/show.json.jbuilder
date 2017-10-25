@@ -1,1 +1,1 @@
-json.partial! "pieces/piece", piece: @piece
+json.partial! 'pieces/piece', piece: @piece

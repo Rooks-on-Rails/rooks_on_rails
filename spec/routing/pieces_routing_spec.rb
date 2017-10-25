@@ -2,5 +2,5 @@
 
 # RSpec.describe PiecesController, type: :routing do
 #   describe "routing" do
-    
+
 # end
