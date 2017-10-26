@@ -32,4 +32,8 @@ class Game < ApplicationRecord
       Pawn.create(position_x: 6, position_y: w, game: self, color: 'white')
     end
   end
+
+  def check?
+    # code
+  end
 end
