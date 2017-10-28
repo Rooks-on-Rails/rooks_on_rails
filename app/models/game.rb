@@ -44,53 +44,28 @@ class Game < ApplicationRecord
     queens = Queen.all
 
     pawns.each do |pawn|
-      if pawn.valid_move?(white_king.position_x, white_king.position_y) && pawn.color != white_king.color
-        return true
-      end
-
-      if pawn.valid_move?(black_king.position_x, black_king.position_y) && pawn.color != black_king.color
-        return true
-      end
+      return true if pawn.valid_move?(white_king.position_x, white_king.position_y) && pawn.color != white_king.color
+      return true if pawn.valid_move?(black_king.position_x, black_king.position_y) && pawn.color != black_king.color
     end
 
     knights.each do |knight|
-      if knight.valid_move?(white_king.position_x, white_king.position_y) && knight.color != white_king.color
-        return true
-      end
-
-      if knight.valid_move?(black_king.position_x, black_king.position_y) && knight.color != black_king.color
-        return true
-      end
+      return true if knight.valid_move?(white_king.position_x, white_king.position_y) && knight.color != white_king.color
+      return true if knight.valid_move?(black_king.position_x, black_king.position_y) && knight.color != black_king.color
     end
 
     bishops.each do |bishop|
-      if bishop.valid_move?(white_king.position_x, white_king.position_y) && bishop.color != white_king.color
-        return true
-      end
-
-      if bishop.valid_move?(black_king.position_x, black_king.position_y) && bishop.color != black_king.color
-        return true
-      end
+      return true if bishop.valid_move?(white_king.position_x, white_king.position_y) && bishop.color != white_king.color
+      return true if bishop.valid_move?(black_king.position_x, black_king.position_y) && bishop.color != black_king.color
     end
 
     rooks.each do |rook|
-      if rook.valid_move?(white_king.position_x, white_king.position_y) && rook.color != white_king.color
-        return true
-      end
-
-      if rook.valid_move?(black_king.position_x, black_king.position_y) && rook.color != black_king.color
-        return true
-      end
+      return true if rook.valid_move?(white_king.position_x, white_king.position_y) && rook.color != white_king.color
+      return true if rook.valid_move?(black_king.position_x, black_king.position_y) && rook.color != black_king.color
     end
 
     queens.each do |queen|
-      if queen.valid_move?(white_king.position_x, white_king.position_y) && queen.color != white_king.color
-        return true
-      end
-
-      if queen.valid_move?(black_king.position_x, black_king.position_y) && queen.color != black_king.color
-        return true
-      end
+      return true if queen.valid_move?(white_king.position_x, white_king.position_y) && queen.color != white_king.color
+      return true if queen.valid_move?(black_king.position_x, black_king.position_y) && queen.color != black_king.color
     end
 
     false
