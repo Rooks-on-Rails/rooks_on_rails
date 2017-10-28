@@ -34,6 +34,5 @@ class Game < ApplicationRecord
   end
 
   def check?
-    # expect(knight.valid_move?(king.position_x, king.position_y) && knight.color != king.color).to eq(true)
   end
 end
