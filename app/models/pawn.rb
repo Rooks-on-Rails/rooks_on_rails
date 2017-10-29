@@ -1,7 +1,7 @@
 class Pawn < Piece
 
-    INITIAL_WHITE_PAWN_LOCATIONS = [[x1, y0], [x1, y1], [x1, y2], [x1, y3], [x1, y4], [x1, y5], [x1, y6] [x1, y7]]
-    INITIAL_BLACK_PAWN_LOCATIONS = [[x6, y0], [x6, y1], [x6, y2], [x6, y3], [x6, y4], [x6, y5], [x6, y6] [x6, y7]]
+    INITIAL_WHITE_PAWN_LOCATIONS = [[1, 0], [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6] [1, 7]]
+    INITIAL_BLACK_PAWN_LOCATIONS = [[6, 0], [6, 1], [6, 2], [6, 3], [6, 4], [6, 5], [6, 6] [6, 7]]
 
     def move(destination_x, destination_y)
       if valid_move?(destination_x, destination_y)
@@ -14,9 +14,9 @@ class Pawn < Piece
 
     def initial_pawn_location?
         if self.color == 'white'
-          INITIAL_WHITE_PAWN_LOCATIONS.include?([self.x_position, self.y_position])
+          INITIAL_WHITE_PAWN_LOCATIONS.include?([self.position_x, self.position_y])
         else
-          INITIAL_BLACK_PAWN_LOCATIONS.include?([self.x_position, self.y_position])
+          INITIAL_BLACK_PAWN_LOCATIONS.include?([self.position_x, self.position_y])
         end
     end
 
