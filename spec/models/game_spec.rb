@@ -181,43 +181,23 @@ RSpec.describe Game, type: :model do
   end
 
   describe '#check?' do
-    it 'returns true if the king is in check' do
+    it 'returns true if the king is in check by knight' do
       game = Game.create
       game.populate_board!
       king = King.find_by(color: 'black')
-
       king.update_attributes(position_x: 4)
-      # replace above with following line after axis fix is merged
-      # king.update_attributes(position_y: 3)
-
       knight = Knight.find_by(position_x: 7, position_y: 1)
-      # replace above with following line after axis fix is merged
-      # knight = Knight.find_by(position_x: 1, position_y: 0)
-
       knight.update_attributes(position_x: 5, position_y: 2)
-      # replace above with following line after axis fix is merged
-      # knight.update_attributes(position_x: 2, position_y: 2)
-
       expect(game.check?).to eq(true)
     end
 
-    it 'returns false if the king is not in check' do
+    it 'returns false if the king is not in check by knight' do
       game = Game.create
       game.populate_board!
       king = King.find_by(color: 'black')
-
       king.update_attributes(position_x: 4)
-      # replace above with following line after axis fix is merged
-      # king.update_attributes(position_y: 3)
-
       knight = Knight.find_by(position_x: 7, position_y: 1)
-      # replace above with following line after axis fix is merged
-      # knight = Knight.find_by(position_x: 1, position_y: 0)
-
       knight.update_attributes(position_x: 5, position_y: 0)
-      # replace above with following line after axis fix is merged
-      # knight.update_attributes(position_x: 0, position_y: 2)
-
       expect(game.check?).to eq(false)
     end
 
