@@ -245,7 +245,7 @@ RSpec.describe Game, type: :model do
       game = Game.create
       game.populate_board!
       king = King.find_by(color: 'black')
-      king.update_attributes(position_x: 5, position_y: 6)
+      king.update_attributes(position_x: 4, position_y: 5)
       queen = Queen.find_by(color: 'white')
       queen.update_attributes(position_x: 2, position_y: 3)
       expect(game.check?).to eq(true)
@@ -255,7 +255,7 @@ RSpec.describe Game, type: :model do
       game = Game.create
       game.populate_board!
       king = King.find_by(color: 'black')
-      king.update_attributes(position_x: 6, position_y: 6)
+      king.update_attributes(position_x: 6, position_y: 5)
       queen = Queen.find_by(color: 'white')
       queen.update_attributes(position_x: 2, position_y: 3)
       expect(game.check?).to eq(false)
