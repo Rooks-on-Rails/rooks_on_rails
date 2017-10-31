@@ -3,12 +3,11 @@ module GamesHelper
     piece = @game.pieces.find_by(position_x: x, position_y: y)
     return nil if piece.blank?
     
-    link_to image_tag(piece.icon_path, size: '48x48'), piece_path(piece[:id])
+    # link_to image_tag(piece.icon_path, size: '48x48'), piece_path(piece[:id])
     if piece == @current_piece
-      "<div class='selected'>".html_safe
+      content_tag(:div, image_tag(piece.icon_path, size: '48x48'), class: "selected")
     else 
-      "<div>".html_safe
+      link_to image_tag(piece.icon_path, size: '48x48'), piece_path(piece[:id])
     end
-    "</div>".html_safe
   end
 end
