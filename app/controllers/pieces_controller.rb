@@ -30,15 +30,10 @@ class PiecesController < ApplicationController
   # PATCH/PUT /pieces/1
   # PATCH/PUT /pieces/1.json
   def update
-    respond_to do |format|
-      if @piece.update(piece_params)
-        format.html { redirect_to @piece, notice: 'Piece was successfully updated.' }
-        format.json { render :show, status: :ok, location: @piece }
-      else
-        format.html { render :edit }
-        format.json { render json: @piece.errors, status: :unprocessable_entity }
-      end
-    end
+    @current_piece = Piece.find(params[:id])
+    @game = @current_piece.game
+    @current_piece.update_attributes(position_x:, position_y:)
+    redirect_to game_path(@game)
   end
 
   # DELETE /pieces/1
