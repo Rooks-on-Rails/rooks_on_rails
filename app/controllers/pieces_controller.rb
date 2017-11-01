@@ -32,7 +32,7 @@ class PiecesController < ApplicationController
   def update
     @current_piece = Piece.find(params[:id])
     @game = @current_piece.game
-    @current_piece.update_attributes(position_x:, position_y:)
+    @current_piece.update_attributes(piece_params)
     redirect_to game_path(@game)
   end
 
@@ -55,6 +55,6 @@ class PiecesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def piece_params
-    params.fetch(:piece, {})
+    params.require(:piece).permit(:position_x, :position_y)
   end
 end
