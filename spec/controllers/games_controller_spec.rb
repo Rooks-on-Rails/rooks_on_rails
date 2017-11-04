@@ -138,10 +138,12 @@ RSpec.describe GamesController, type: :controller do
   end
 
   describe 'Forfeit #forfeit' do
+    let(:game) { Game.create! }
+    let(:white_player) { FactoryGirl.create(:user) }
+    let(:black_player) { FactoryGirl.create(:user) }
     pending 'should set the winning player id to the opposing player' do
-      game = Game.create!(white_player_id: 1, black_player_id: 2, winning_player_id: nil)
-
-      expect (white_player_id.foreit). to eq(winning_player_id=black_player_id)
+      game.forfeit(white_player)
+      expect black_player_id. eq(winning_player_id)
     end
     it "should update the games' status to over" do
     end

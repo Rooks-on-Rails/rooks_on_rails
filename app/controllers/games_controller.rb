@@ -61,7 +61,7 @@ class GamesController < ApplicationController
     end
   end
 
-  def forfiet
+  def forfiet(_active_player)
     @game = Game.find(params[:id])
     if @game.active_player.id == @game.white_player_id
       @game.update_attributes.call(winning_player_id: @game.black_player_id)
