@@ -145,8 +145,6 @@ RSpec.describe GamesController, type: :controller do
       game.forfeit(white_player)
       expect black_player_id. eq(winning_player_id)
     end
-    it "should update the games' status to over" do
-    end
     it 'should redirect the user to the index_path' do
     end
   end
