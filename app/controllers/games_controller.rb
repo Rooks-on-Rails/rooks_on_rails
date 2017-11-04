@@ -72,4 +72,11 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:name)
   end
+
+  def forfiet
+
+  end
+
+
+
 end
