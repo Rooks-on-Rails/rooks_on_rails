@@ -183,7 +183,8 @@ RSpec.describe Game, type: :model do
     it 'returns true if the king is in check by knight' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
+      binding.pry
       king.update_attributes(position_y: 3)
       knight = Knight.find_by(position_x: 1, position_y: 0)
       knight.update_attributes(position_x: 2, position_y: 2)
@@ -193,7 +194,7 @@ RSpec.describe Game, type: :model do
     it 'returns false if the king is not in check by knight' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_y: 3)
       knight = Knight.find_by(position_x: 1, position_y: 0)
       knight.update_attributes(position_x: 0, position_y: 2)
@@ -203,7 +204,7 @@ RSpec.describe Game, type: :model do
     it 'returns true if the king is in check by pawn' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 2, position_y: 5)
       pawn = Pawn.find_by(position_x: 1, position_y: 1)
       pawn.update_attributes(position_x: 1, position_y: 4)
@@ -213,7 +214,7 @@ RSpec.describe Game, type: :model do
     it 'returns false if the king is not in check by pawn' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 2, position_y: 5)
       pawn = Pawn.find_by(position_x: 1, position_y: 1)
       pawn.update_attributes(position_x: 1, position_y: 2)
@@ -223,7 +224,7 @@ RSpec.describe Game, type: :model do
     it 'returns true if the king is in check by rook' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 0, position_y: 5)
       rook = Rook.find_by(position_x: 0, position_y: 0)
       rook.update_attributes(position_x: 0, position_y: 2)
@@ -233,7 +234,7 @@ RSpec.describe Game, type: :model do
     it 'returns false if the king is not in check by rook' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 1, position_y: 5)
       rook = Rook.find_by(position_x: 0, position_y: 0)
       rook.update_attributes(position_x: 0, position_y: 2)
@@ -243,7 +244,7 @@ RSpec.describe Game, type: :model do
     it 'returns true if the king is in check by queen' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 4, position_y: 5)
       queen = Queen.find_by(color: 'white')
       queen.update_attributes(position_x: 2, position_y: 3)
@@ -253,7 +254,7 @@ RSpec.describe Game, type: :model do
     it 'returns false if the king is not in check by queen' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 6, position_y: 5)
       queen = Queen.find_by(color: 'white')
       queen.update_attributes(position_x: 2, position_y: 3)
@@ -263,7 +264,7 @@ RSpec.describe Game, type: :model do
     it 'returns true if the king is in check by bishop' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 3, position_y: 5)
       bishop = Bishop.find_by(position_x: 2, position_y: 0)
       bishop.update_attributes(position_x: 0, position_y: 2)
@@ -273,7 +274,7 @@ RSpec.describe Game, type: :model do
     it 'returns false if the king is not in check by bishop' do
       game = Game.create
       game.populate_board!
-      king = King.find_by(color: 'black')
+      king = King.find_by(color: 'black', game: game)
       king.update_attributes(position_x: 4, position_y: 5)
       bishop = Bishop.find_by(position_x: 2, position_y: 0)
       bishop.update_attributes(position_x: 0, position_y: 2)
