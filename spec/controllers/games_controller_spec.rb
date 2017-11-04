@@ -136,4 +136,13 @@ RSpec.describe GamesController, type: :controller do
       expect(response).to redirect_to(games_url)
     end
   end
+
+  describe 'Forfeit #forfeit' do
+    it 'should set the winning player id to the opposing player' do
+    end
+    it "should update the games' status to over" do
+    end
+    it 'should redirect the user to the index_path' do
+    end
+  end
 end
