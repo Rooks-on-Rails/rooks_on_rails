@@ -75,10 +75,5 @@ class GamesController < ApplicationController
     params.require(:game).permit(:name)
   end
 
-  def forfiet
-
-  end
-
-
-
+  def forfiet; end
 end
