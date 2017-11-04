@@ -64,9 +64,9 @@ class GamesController < ApplicationController
   def forfiet(_active_player)
     @game = Game.find(params[:id])
     if @game.active_player.id == @game.white_player_id
-      @game.update_attributes.call(winning_player_id: @game.black_player_id)
+      @game.update_attributes(winning_player_id: @game.black_player_id)
     else
-      @game.update_attributes.call(winning_player_id: @game.white_player_id)
+      @game.update_attributes(winning_player_id: @game.white_player_id)
     end
     redirect_to root_path
   end
