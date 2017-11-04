@@ -37,35 +37,9 @@ class Game < ApplicationRecord
     white_king = King.find_by(color: 'white', game: self)
     black_king = King.find_by(color: 'black', game: self)
 
-    pawns = Pawn.all
-    knights = Knight.all
-    bishops = Bishop.all
-    rooks = Rook.all
-    queens = Queen.all
-
-    pawns.each do |pawn|
-      return true if pawn.valid_move?(white_king.position_x, white_king.position_y) && pawn.color != white_king.color
-      return true if pawn.valid_move?(black_king.position_x, black_king.position_y) && pawn.color != black_king.color
-    end
-
-    knights.each do |knight|
-      return true if knight.valid_move?(white_king.position_x, white_king.position_y) && knight.color != white_king.color
-      return true if knight.valid_move?(black_king.position_x, black_king.position_y) && knight.color != black_king.color
-    end
-
-    bishops.each do |bishop|
-      return true if bishop.valid_move?(white_king.position_x, white_king.position_y) && bishop.color != white_king.color
-      return true if bishop.valid_move?(black_king.position_x, black_king.position_y) && bishop.color != black_king.color
-    end
-
-    rooks.each do |rook|
-      return true if rook.valid_move?(white_king.position_x, white_king.position_y) && rook.color != white_king.color
-      return true if rook.valid_move?(black_king.position_x, black_king.position_y) && rook.color != black_king.color
-    end
-
-    queens.each do |queen|
-      return true if queen.valid_move?(white_king.position_x, white_king.position_y) && queen.color != white_king.color
-      return true if queen.valid_move?(black_king.position_x, black_king.position_y) && queen.color != black_king.color
+    self.pieces.where.not(type: 'King').each do |piece|
+      return true if piece.valid_move?(white_king.position_x, white_king.position_y) && piece.color != white_king.color
+      return true if piece.valid_move?(black_king.position_x, black_king.position_y) && piece.color != black_king.color
     end
 
     false
