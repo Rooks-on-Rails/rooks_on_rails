@@ -34,8 +34,8 @@ class Game < ApplicationRecord
   end
 
   def check?
-    white_king = King.find_by(color: 'white')
-    black_king = King.find_by(color: 'black')
+    white_king = King.find_by(color: 'white', game: self)
+    black_king = King.find_by(color: 'black', game: self)
 
     pawns = Pawn.all
     knights = Knight.all
