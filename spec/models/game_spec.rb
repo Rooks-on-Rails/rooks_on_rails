@@ -184,7 +184,6 @@ RSpec.describe Game, type: :model do
       game = Game.create
       game.populate_board!
       king = King.find_by(color: 'black', game: game)
-      binding.pry
       king.update_attributes(position_y: 3)
       knight = Knight.find_by(position_x: 1, position_y: 0)
       knight.update_attributes(position_x: 2, position_y: 2)
