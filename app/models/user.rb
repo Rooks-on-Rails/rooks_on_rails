@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   include Gravtastic
   gravtastic secure: true,
-             default: 'default_gravatar.png',
+             default: 'monsterid',
              size: 100
 end

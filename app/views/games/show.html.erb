@@ -5,7 +5,9 @@
 </div>
 
 <div class="black-player-image">
-  <%= image_tag @game.black_player.gravatar_url %>
+  <% if @game.black_player.present? %>
+    <%= image_tag @game.black_player.gravatar_url %>
+  <% end %>
 </div>
 
 <p>
