@@ -67,4 +67,4 @@ gem 'rubocop', require: false
 
 gem 'simple_form'
 
-gem 'gravatar-ultimate'
+gem 'gravtastic'

@@ -24,6 +24,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.create(game_params)
     @game.populate_board!
+    @user = User.find_by(1)
 
     respond_to do |format|
       if @game.save

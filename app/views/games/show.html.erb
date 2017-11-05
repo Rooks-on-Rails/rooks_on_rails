@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="white-player-image">
+  <% binding.pry %>
+  <%= image_tag @user.gravatar_url %>
+</div>
+
 <p>
   <strong>Game:</strong>
   <%= @game.name %>

@@ -4,4 +4,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  include Gravtastic
+    gravtastic :secure => true,
+                :default => 'default_gravatar.png',
+                :size => 100
 end
