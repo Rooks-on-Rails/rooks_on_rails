@@ -4,7 +4,7 @@ class Rook < Piece
     difference_x = destination_x - position_x
     difference_y = destination_y - position_y
     return false if difference_x.zero? && difference_y.zero?
-    difference_x.abs <= 7 && difference_y.abs == 0 || difference_x.abs <= 0 && difference_y.abs <= 7
+    difference_x.abs <= 7 && difference_y.abs.zero? || difference_x.abs.zero? && difference_y.abs <= 7
   end
 end
 # difference_x.abs == 1 && difference_y.abs == 2 || difference_x.abs == 2 && difference_y.abs == 1
