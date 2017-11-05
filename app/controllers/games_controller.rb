@@ -23,6 +23,8 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.create(game_params)
+    @game.white_player = current_user
+    @game.save
     @game.populate_board!
 
     respond_to do |format|
