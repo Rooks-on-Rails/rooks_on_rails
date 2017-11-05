@@ -37,7 +37,8 @@ class Game < ApplicationRecord
     white_king = King.find_by(color: 'white', game: self)
     black_king = King.find_by(color: 'black', game: self)
 
-    pieces.where.not(type: 'King').each do |piece|
+    non_king_pieces = pieces.where.not(type: 'King')
+    non_king_pieces.each do |piece|
       return true if piece.valid_move?(white_king.position_x, white_king.position_y) && piece.color != white_king.color
       return true if piece.valid_move?(black_king.position_x, black_king.position_y) && piece.color != black_king.color
     end
