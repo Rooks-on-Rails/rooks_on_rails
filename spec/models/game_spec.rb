@@ -175,7 +175,7 @@ RSpec.describe Game, type: :model do
     it 'Adds black Queen to the board' do
       game = Game.create!
       game.populate_board!
-      expect(game.pieces.find_by(position_x: 0, position_y: 3).type).to eq 'Queen'
+      expect(game.pieces.find_by(position_x: 3, position_y: 7).type).to eq 'Queen'
     end
   end
 
