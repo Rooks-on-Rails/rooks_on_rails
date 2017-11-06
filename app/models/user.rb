@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   include Gravtastic
-  gravtastic secure: true,
-             default: 'monsterid',
-             size: 100
+  gravtastic  secure: true,
+              default: 'mm',
+              size: 100
 end
