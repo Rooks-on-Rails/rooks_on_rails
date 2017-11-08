@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Pawn, type: :model do
   describe '#valid_move' do
     it 'returns true if the move is two forwards from a starting position (white)' do
-      pawn = Pawn.new(color: 'white'
+      pawn = Pawn.new(color: 'white')
       pawn.position_x = 3
       pawn.position_y = 1
       expect(pawn.valid_move?(3, 3)).to eq(true)
