@@ -17,4 +17,4 @@
 .byebug_history
 
 # Ignore Local Mac File
-/.DS_Store
+.DS_Store
