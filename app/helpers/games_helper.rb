@@ -4,15 +4,14 @@ module GamesHelper
 
     if piece == @current_piece
       content_tag(:div, image_tag(piece.icon_path, size: '48x48'), class: 'selected')
+    elsif piece.present? 
+      link_to image_tag(piece.icon_path, size: '48x48'), piece_path(piece[:id])
     else
-      if piece.present? 
-        link_to image_tag(piece.icon_path, size: '48x48'), piece_path(piece[:id])
-      else
-        simple_form_for(@current_piece, url: piece_path(@current_piece)) do |f|
-          # f.hidden_field(:position_x, value: x) +
-          # f.hidden_field(:position_y, value: y) +
-          f.submit 'Update'
-        end
+      # "Testing"
+      simple_form_for(@current_piece, url: piece_path(@current_piece)) do |f|
+        # f.hidden_field(:position_x, value: x) +
+        # f.hidden_field(:position_y, value: y) +
+        f.submit 'Update'
       end
     end
   end
