@@ -6,7 +6,7 @@ class Pawn < Piece
     if self.color == 'white'
       initial_white_pawn_locations.include?([self.position_x, self.position_y])
     else
-      initial_black_pawn_locations.include?([self.position_x, self.position_y)
+      initial_black_pawn_locations.include?([self.position_x, self.position_y])
     end
   end
 
