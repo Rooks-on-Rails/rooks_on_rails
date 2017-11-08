@@ -10,4 +10,4 @@ RSpec.describe PiecesControllerSpec, type: :controller do
    black_piece.move(destination_x, destination_y)
    # assert
    expect([black_piece.position_x, black_piece.position_y]).to eq([destination_x, destination_y])
- end
+end
