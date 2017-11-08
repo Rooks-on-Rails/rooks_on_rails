@@ -7,9 +7,9 @@ class Pawn < Piece
     possible_moves = []
 
     if color == 'white'
-      possible_moves << [position_x.to_i, position_y.to_i + 1]
+      possible_moves << [position_x.to_i, (position_y.to_i + 1)]
       if position_y = 1
-        possible_moves << [position_x.to_i, position_y.to_i + 2]
+        possible_moves << [position_x.to_i, (position_y.to_i + 2)]
       end
     end
 
