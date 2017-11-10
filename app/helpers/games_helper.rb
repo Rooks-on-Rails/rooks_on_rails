@@ -9,6 +9,8 @@ module GamesHelper
     else
       # "Testing"
       simple_form_for(@current_piece, url: piece_path(@current_piece)) do |f|
+        # f.input position_x, as: :hidden, input_html: {value: x} 
+        # f.input position_y,
         # f.hidden_field(:position_x, value: x) +
         # f.hidden_field(:position_y, value: y) +
         f.submit 'Update'
