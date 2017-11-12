@@ -5,7 +5,7 @@ class Game < ApplicationRecord
   has_one :winning_player, class_name: 'User', dependent: false
   has_many :pieces, dependent: false
 
-    def populate_board!
+  def populate_board!
     Rook.create(position_x: 0, position_y: 7, game: self, color: 'black')
     Knight.create(position_x: 1, position_y: 7, game: self, color: 'black')
     Bishop.create(position_x: 2, position_y: 7, game: self, color: 'black')
