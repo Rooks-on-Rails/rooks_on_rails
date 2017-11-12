@@ -19,7 +19,6 @@ RSpec.describe Pawn, type: :model do
 
     it 'returns false if the move is two forwards not from a starting position (white)' do
       pawn = Pawn.new(color: 'white', position_x: 3, position_y: 2)
-      binding.pry
       expect(pawn.valid_move?(3, 4)).to eq(false)
     end
 
