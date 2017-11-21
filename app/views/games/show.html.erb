@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div class="white-player-image">
+  <%= image_tag @game.white_player.gravatar_url %>
+</div>
+
+<div class="black-player-image">
+  <% if @game.black_player.present? %>
+    <%= image_tag @game.black_player.gravatar_url %>
+  <% end %>
+</div>
+
 <p>
   <strong>Game:</strong>
   <%= @game.name %>

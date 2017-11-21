@@ -16,5 +16,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore Local Mac File
+# Ignore this Mac OS file.
 .DS_Store
+
+# Ignore .idea files
+.idea
